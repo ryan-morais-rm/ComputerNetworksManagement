@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: zabbix-db
+    environment:
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix
+      - POSTGRES_DB=zabbix
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  zabbix-app:
+    image: zabbix-debian:v1
+    container_name: zabbix-debian
+    ports:
+      - "80:80"
+      - "10051:10051"
+    environment:
+      - DB_SERVER_HOST=db
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix
+      - POSTGRES_DB=zabbix
+    depends_on:
+      - db
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
