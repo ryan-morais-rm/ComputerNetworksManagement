@@ -1,9 +1,9 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:16-alpine
     container_name: zabbix-db
+    ports: 
+      - "5432:5432"
     environment:
       - POSTGRES_USER=zabbix
       - POSTGRES_PASSWORD=zabbix
@@ -18,6 +18,8 @@ services:
       - "80:80"
       - "10051:10051"
     environment:
+      - ZBX_SERVER_HOST=127.0.0.1
+      - ZBX_SERVER_PORT=10051
       - DB_SERVER_HOST=db
       - POSTGRES_USER=zabbix
       - POSTGRES_PASSWORD=zabbix
