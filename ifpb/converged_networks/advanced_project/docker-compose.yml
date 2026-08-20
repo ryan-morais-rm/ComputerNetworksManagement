@@ -1,0 +1,28 @@
+services:
+  server:
+    build: ./server
+    container_name: wsbench-server
+    networks:
+      - benchlan
+    ports:
+      - "3000:3000"
+      - "3443:3443"
+    volumes:
+      - ./results:/results
+
+  client:
+    build: ./client
+    container_name: wsbench-client
+    networks:
+      - benchlan
+    depends_on:
+      - server
+    volumes:
+      - ./results:/results
+    # Necessário apenas para simular latência/jitter de rede com "tc"
+    # cap_add:
+    #  - NET_ADMIN
+
+networks:
+  benchlan:
+    driver: bridge
