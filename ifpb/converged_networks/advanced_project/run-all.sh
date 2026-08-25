@@ -69,7 +69,7 @@ run_scenario() {
       --copies="$copies" \
       --overhead="$overhead" \
       --runs="$RUNS" \
-      --out="/results/${protocol}-${direction}-oh${overhead}.csv" \
+      --out="/results/csv/${protocol}-${direction}-oh${overhead}.csv" \
       >> "$LOG_FILE" 2>&1; then
     log "    OK: $label"
   else
@@ -78,7 +78,7 @@ run_scenario() {
 }
 
 FULL_SWEEP="1,3,10,30,100,300,1000,3000"
-OVERHEAD_LEVELS="0 10 50 100 200 300"
+OVERHEAD_LEVELS="10 50 100 200 300"
 
 # --- 4.2 / 4.3 — HTTP e WebSocket, sem TLS, varrendo 1..3000 cópias ---
 log "--- Etapa 1/3: HTTP e WebSocket sem TLS (seções 4.2 e 4.3) ---"
@@ -97,6 +97,11 @@ for protocol in https wss; do
 done
 
 # --- 4.5 — Overhead de cabeçalhos HTTP extras, 100 cópias fixas ---
+# Observação: overhead=0 NÃO é regerado aqui — ele já existe em
+# http-send-oh0.csv / http-receive-oh0.csv, gerados na Etapa 1 com a
+# varredura completa de cópias (1..3000). Se overhead=0 fosse regerado
+# aqui com copies=100 fixo, ele SOBRESCREVERIA o arquivo da Etapa 1
+# (mesmo nome de arquivo), destruindo os dados de 4.2/4.3/4.4/4.6.
 log "--- Etapa 3/3: Overhead de cabeçalhos HTTP (seção 4.5) ---"
 for direction in send receive; do
   for overhead in $OVERHEAD_LEVELS; do

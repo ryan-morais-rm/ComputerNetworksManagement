@@ -4,5 +4,7 @@ example/pgdata
 ifpb/converged_networks/advanced_project/agenda.MD
 
 # Logs gerados pelo run-all.sh
-ifpb/converged_networks/advanced_project/data/run.log
+ifpb/converged_networks/advanced_project/results/run.log
 ifpb/converged_networks/advanced_project/results/csv
+
+ifpb/converged_networks/advanced_project/image.png
