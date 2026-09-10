@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'vm-cluster'
+    static_configs:
+      - targets: ['10.0.0.15:9100', '10.0.0.16:9100', '10.0.0.14:9100'] 
