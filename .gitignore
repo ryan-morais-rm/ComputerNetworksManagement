@@ -6,5 +6,8 @@ ifpb/converged_networks/advanced_project/agenda.MD
 # Logs gerados pelo run-all.sh
 ifpb/converged_networks/advanced_project/results/run.log
 ifpb/converged_networks/advanced_project/results/csv
-
 ifpb/converged_networks/advanced_project/image.png
+
+# Repositório do paho e mqtt-sn
+ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c
+ifpb/converged_networks/exercises/iot/MQTT-SN/mqtt-sn-tools
