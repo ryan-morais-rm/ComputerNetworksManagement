@@ -1,0 +1,9 @@
+cc -g -Wall -DVERSION=0.0.7 -c mqtt-sn.c
+cc -g -Wall -DVERSION=0.0.7 -c mqtt-sn-dump.c
+cc  -o mqtt-sn-dump mqtt-sn.o mqtt-sn-dump.o
+cc -g -Wall -DVERSION=0.0.7 -c mqtt-sn-pub.c
+cc  -o mqtt-sn-pub mqtt-sn.o mqtt-sn-pub.o
+cc -g -Wall -DVERSION=0.0.7 -c mqtt-sn-sub.c
+cc  -o mqtt-sn-sub mqtt-sn.o mqtt-sn-sub.o
+cc -g -Wall -DVERSION=0.0.7 -c mqtt-sn-serial-bridge.c
+cc  -o mqtt-sn-serial-bridge mqtt-sn.o mqtt-sn-serial-bridge.o

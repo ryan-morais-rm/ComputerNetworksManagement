@@ -1,0 +1,88 @@
+Start building MQTT-SN Gateway  udp
+~/Área de trabalho/.projetos/repositorios/github/ComputerNetworksManagement/ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c ~/Área de trabalho/.projetos/repositorios/github/ComputerNetworksManagement/ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c/MQTTSNGateway
+CMake Deprecation Warning at CMakeLists.txt:17 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- CMake version: 3.28.3
+-- CMake system name: Linux
+-- Timestamp is 2026-09-15T13:55:53Z
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- VERSION : 1.5.1
+-- SENSORNET: udp
+-- Definitions:  
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ryan-correia/Área de trabalho/.projetos/repositorios/github/ComputerNetworksManagement/ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c/build.gateway
+[  8%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNConnectClient.c.o
+[ 16%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNPacket.c.o
+[ 25%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNSearchClient.c.o
+[ 33%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNSubscribeClient.c.o
+[ 41%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNUnsubscribeClient.c.o
+[ 50%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNSerializePublish.c.o
+[ 58%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNDeserializePublish.c.o
+[ 66%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNConnectServer.c.o
+[ 75%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNSearchServer.c.o
+[ 83%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNSubscribeServer.c.o
+[ 91%] Building C object MQTTSNPacket/src/CMakeFiles/MQTTSNPacket.dir/MQTTSNUnsubscribeServer.c.o
+[100%] Linking C shared library libMQTTSNPacket.so
+[100%] Built target MQTTSNPacket
+[ 25%] Built target MQTTSNPacket
+[ 27%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTGWConnectionHandler.cpp.o
+[ 29%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTGWPacket.cpp.o
+[ 31%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTGWPublishHandler.cpp.o
+[ 34%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTGWSubscribeHandler.cpp.o
+[ 36%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGateway.cpp.o
+[ 38%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWBrokerRecvTask.cpp.o
+[ 40%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWBrokerSendTask.cpp.o
+[ 42%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWClient.cpp.o
+[ 44%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWClientRecvTask.cpp.o
+[ 46%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWClientSendTask.cpp.o
+[ 48%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWConnectionHandler.cpp.o
+[ 51%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWLogmonitor.cpp.o
+[ 53%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWPacket.cpp.o
+[ 55%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWPacketHandleTask.cpp.o
+[ 57%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWProcess.cpp.o
+[ 59%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWPublishHandler.cpp.o
+[ 61%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWSubscribeHandler.cpp.o
+[ 63%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWEncapsulatedPacket.cpp.o
+[ 65%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWForwarder.cpp.o
+[ 68%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWQoSm1Proxy.cpp.o
+[ 70%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWAdapter.cpp.o
+[ 72%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWAggregater.cpp.o
+[ 74%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWClientList.cpp.o
+[ 76%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWTopic.cpp.o
+[ 78%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWAdapterManager.cpp.o
+[ 80%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNAggregateConnectionHandler.cpp.o
+[ 82%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWMessageIdTable.cpp.o
+[ 85%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/MQTTSNGWAggregateTopicTable.cpp.o
+[ 87%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/linux/udp/SensorNetwork.cpp.o
+[ 89%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/linux/Timer.cpp.o
+[ 91%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/linux/Network.cpp.o
+[ 93%] Building CXX object MQTTSNGateway/src/CMakeFiles/mqtt-sngateway_common.dir/linux/Threading.cpp.o
+[ 95%] Linking CXX static library libmqtt-sngateway_common.a
+[ 95%] Built target mqtt-sngateway_common
+[ 97%] Building CXX object MQTTSNGateway/src/CMakeFiles/MQTT-SNGateway.dir/mainGateway.cpp.o
+[100%] Linking CXX executable "/home/ryan-correia/Área de trabalho/.projetos/repositorios/github/ComputerNetworksManagement/ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c/MQTTSNGateway/bin/MQTT-SNGateway"
+[100%] Built target MQTT-SNGateway
+[ 25%] Built target MQTTSNPacket
+[ 95%] Built target mqtt-sngateway_common
+[ 97%] Building CXX object MQTTSNGateway/src/CMakeFiles/MQTT-SNLogmonitor.dir/mainLogmonitor.cpp.o
+[100%] Linking CXX executable "/home/ryan-correia/Área de trabalho/.projetos/repositorios/github/ComputerNetworksManagement/ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c/MQTTSNGateway/bin/MQTT-SNLogmonitor"
+[100%] Built target MQTT-SNLogmonitor
+~/Área de trabalho/.projetos/repositorios/github/ComputerNetworksManagement/ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c/MQTTSNGateway

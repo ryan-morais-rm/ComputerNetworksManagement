@@ -1,0 +1,51 @@
+
+ ***************************************************************************
+ * MQTT-SN Gateway
+ * Part of Project Paho in Eclipse
+ * (https://github.com/eclipse/paho.mqtt-sn.embedded-c.git)
+ *
+ * Author : Tomoaki YAMAGUCHI
+ * Version: 1.5.1
+ ***************************************************************************
+ ConfigFile  : ./gateway.conf
+ ClientList  : /path/to/your_clients.conf
+ Broker      : (null) : 1883, 8883
+ RootCApath  : (null)
+ RootCAfile  : (null)
+ CertKey     : (null)
+ PrivateKey  : (null)
+ SensorN/W   : UDP Multicast 225.1.1.1:1884, Gateway Port:10000, TTL:1
+ Max Clients : 30
+
+20260915 113831.483 PahoGateway-01 starts running.
+
+20260915 113931.488   ADVERTISE         --->  Clients                             05 00 01 00 3C
+
+20260915 114002.775   CONNECT           <---  mqtt-sn-tools-32219                 19 04 04 01 00 0A 6D 71 74 74 2D 73 6E 2D 74 6F 6F 6C 73 2D 33 32 32 31 39
+20260915 114002.775   CONNECT           ===>  mqtt-sn-tools-32219                 10 1F 00 04 4D 51 54 54 04 02 00 0A 00 13 6D 71 74 74 2D 73 6E 2D 74 6F 6F 6C 73 2D 33 32 32 31 39
+20260915 114003.007   CONNACK           <===  mqtt-sn-tools-32219                 20 02 00 00
+20260915 114003.007   CONNACK           --->  mqtt-sn-tools-32219                 03 05 00
+
+20260915 114003.007   REGISTER    0001  <---  mqtt-sn-tools-32219                 0C 0A 00 00 00 01 2F 74 65 73 74 65
+20260915 114003.007   REGACK      0001  --->  mqtt-sn-tools-32219                 07 0B 00 01 00 01 00
+
+20260915 114003.007   PUBLISH           <---  mqtt-sn-tools-32219                 12 0C 00 00 01 00 00 74 65 73 74 6D 71 74 74 2D 73 6E
+20260915 114003.007   DISCONNECT        <---  mqtt-sn-tools-32219                 02 18
+20260915 114003.008   PUBLISH           ===>  mqtt-sn-tools-32219                 30 13 00 06 2F 74 65 73 74 65 74 65 73 74 6D 71 74 74 2D 73 6E
+20260915 114003.008   DISCONNECT        ===>  mqtt-sn-tools-32219                 E0 00
+20260915 114003.008   DISCONNECT        --->  mqtt-sn-tools-32219                 02 18
+
+20260915 114030.831   CONNECT           <---  mqtt-sn-tools-32514                 19 04 04 01 00 0A 6D 71 74 74 2D 73 6E 2D 74 6F 6F 6C 73 2D 33 32 35 31 34
+20260915 114030.832   CONNECT           ===>  mqtt-sn-tools-32514                 10 1F 00 04 4D 51 54 54 04 02 00 0A 00 13 6D 71 74 74 2D 73 6E 2D 74 6F 6F 6C 73 2D 33 32 35 31 34
+20260915 114031.054   CONNACK           <===  mqtt-sn-tools-32514                 20 02 00 00
+20260915 114031.054   CONNACK           --->  mqtt-sn-tools-32514                 03 05 00
+
+20260915 114031.055   REGISTER    0001  <---  mqtt-sn-tools-32514                 0C 0A 00 00 00 01 2F 74 65 73 74 65
+20260915 114031.055   REGACK      0001  --->  mqtt-sn-tools-32514                 07 0B 00 01 00 01 00
+
+20260915 114031.055   PUBLISH           <---  mqtt-sn-tools-32514                 12 0C 00 00 01 00 00 74 65 73 74 6D 71 74 74 2D 73 6E
+20260915 114031.055   DISCONNECT        <---  mqtt-sn-tools-32514                 02 18
+20260915 114031.055   DISCONNECT        --->  mqtt-sn-tools-32514                 02 18
+20260915 114031.055   PUBLISH           ===>  mqtt-sn-tools-32514                 30 13 00 06 2F 74 65 73 74 65 74 65 73 74 6D 71 74 74 2D 73 6E
+20260915 114031.055   DISCONNECT        ===>  mqtt-sn-tools-32514                 E0 00
+20260915 114033.055   ADVERTISE         --->  Clients                             05 00 01 00 3C
