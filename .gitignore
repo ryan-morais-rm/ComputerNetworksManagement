@@ -11,3 +11,5 @@ ifpb/converged_networks/advanced_project/image.png
 # Repositório do paho e mqtt-sn
 ifpb/converged_networks/exercises/iot/MQTT-SN/paho.mqtt-sn.embedded-c
 ifpb/converged_networks/exercises/iot/MQTT-SN/mqtt-sn-tools
+
+ifpb/networks_management/exercises/Pratica-MaisPrometheusGrafana/venv
