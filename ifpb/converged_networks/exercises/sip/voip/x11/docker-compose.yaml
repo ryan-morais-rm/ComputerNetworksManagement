@@ -1,0 +1,60 @@
+version: '3.9'
+
+services:
+  voip-container-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cliente-1
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio 
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/1000/pulse:/run/user/1000/pulse
+    networks:
+      - linphone
+
+  voip-container-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cliente-2
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/1000/pulse:/run/user/1000/pulse
+    networks:
+      - linphone
+
+  voip-container-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cliente-3
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/1000/pulse:/run/user/1000/pulse
+    networks:
+      - linphone
+
+networks:
+  linphone:
+    driver: bridge

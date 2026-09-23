@@ -1,0 +1,77 @@
+services:
+  linphone_1:
+    build:
+      context: .
+      dockerfile: Dockerfile-linphone
+    container_name: linphone_1
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio 
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/${UID:-1000}/pulse/native 
+    networks:
+      rede:
+        ipv4_address: 172.16.0.10
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID:-1000}/pulse:/run/user/${UID:-1000}/pulse 
+
+  linphone_2:
+    build:
+      context: .
+      dockerfile: Dockerfile-linphone
+    container_name: linphone_2
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/${UID:-1000}/pulse/native
+    networks:
+      rede:
+        ipv4_address: 172.16.0.20
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID:-1000}/pulse:/run/user/${UID:-1000}/pulse
+
+  linphone_3:
+    build:
+      context: .
+      dockerfile: Dockerfile-linphone
+    container_name: linphone_3
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/${UID:-1000}/pulse/native
+    networks:
+      rede:
+        ipv4_address: 172.16.0.30
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID:-1000}/pulse:/run/user/${UID:-1000}/pulse
+
+  sngrep:
+    build:
+      context: .
+      dockerfile: Dockerfile-sngrep
+    container_name: sngrep
+    privileged: true
+    tty: true
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    command: sleep infinity 
+
+networks:
+  rede:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.0.0/24
