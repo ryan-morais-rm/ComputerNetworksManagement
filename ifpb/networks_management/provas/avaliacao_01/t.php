@@ -11,7 +11,7 @@ $contador = 0;
 $numero = 2;
 $primos = [];
 
-while ($contador < 120) {
+while ($contador < 150) {
     if (saoPrimos($numero)) {
         $primos[] = $numero;
         $contador++;
@@ -19,5 +19,5 @@ while ($contador < 120) {
     $numero++;
 }
 
-echo "Os 120 primeiros números primos são:\n";
+echo "Os 150 primeiros números primos são:\n";
 echo implode(", ", $primos) . "\n";
