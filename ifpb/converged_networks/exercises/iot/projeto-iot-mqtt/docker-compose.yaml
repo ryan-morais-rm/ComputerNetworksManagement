@@ -1,0 +1,52 @@
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: homeassistant
+    environment:
+      - TZ=America/Sao_Paulo
+    volumes:
+      - ha-config:/config 
+    ports:
+      - "8123:8123"
+    restart: unless-stopped 
+  
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto 
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    restart: unless-stopped 
+
+  mqtt-sn-gateway:
+    image: kyberpunk/paho:udp
+    container_name: mqtt-sn-gateway
+    volumes:
+      - ./mqtt-sn-gateway/gateway.conf:/etc/paho/gateway.conf:ro
+    ports:
+      - "10000:10000/udp"
+    depends_on:
+      - mosquitto
+    restart: unless-stopped
+
+  subscriber-mqtt:
+    build:
+      context: ./subscriber 
+      dockerfile: Dockerfile 
+    container_name: subscriber-mqtt 
+    depends_on:
+      - mosquitto 
+    restart: unless-stopped 
+
+  publisher-mqtt-sn:
+    build:
+      context: ./publisher_sn 
+      dockerfile: Dockerfile
+    container_name: publisher-mqtt-sn 
+    depends_on:
+      - mqtt-sn-gateway 
+    restart: unless-stopped 
+
+volumes:
+  ha-config: 
