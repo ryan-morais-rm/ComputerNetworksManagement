@@ -1,0 +1,28 @@
+#!/usr/bin/php -q
+<?php
+include('phpagi.php');
+$matricula = $argv[1];
+$agi = new AGI();
+// Nota: O host mudou para 'db', nome do container no docker-compose
+$db = mysqli_connect("db", "root", "root", "tts");
+
+if(!$db) {
+    $agi->verbose("Erro ao tentar conectar no MYSQL" . mysqli_connect_error());
+    exit(0);
+}
+
+$res = $db->query("SELECT * FROM cliente WHERE matricula = '$matricula';");
+
+if($res->num_rows == 0) {
+    $agi->set_variable("MATRICULASTATUS",0);
+    $agi->set_variable("MATRICULAMESSAGE", "MATRICULA NAO ENCONTRADA. DIGITE NOVAMENTE");
+} else {
+    $row = $res->fetch_object();
+    $agi->set_variable("MATRICULASTATUS", 1);
+    $agi->set_variable("MATRICULAMESSAGE", $row->nome);
+}
+
+$res->close();
+$db->close();
+exit(0);
+?>

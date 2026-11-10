@@ -1,0 +1,52 @@
+services:
+  asterisk:
+    image: judavalente/asterisk
+    container_name: asterisk
+    networks:
+      - redeasterisk
+    ports:
+      - "5063:5060/udp"
+      - "10000-10050:10000-10050/udp"
+    volumes:
+      - ./sip.conf:/etc/asterisk/sip.conf
+      - ./extensions.conf:/etc/asterisk/extensions.conf
+      - ./agi-bin:/var/lib/asterisk/agi-bin
+
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tts
+    networks:
+      - redeasterisk
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d
+
+  voip-container-1:
+    image: judavalente/linphone
+    container_name: voip-container-1
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      - redeasterisk
+    ports:
+      - "5060:5060/udp"
+
+  voip-container-2:
+    image: judavalente/linphone
+    container_name: voip-container-2
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      - redeasterisk
+    ports:
+      - "5061:5060/udp"
+
+networks:
+  redeasterisk:
+    driver: bridge
