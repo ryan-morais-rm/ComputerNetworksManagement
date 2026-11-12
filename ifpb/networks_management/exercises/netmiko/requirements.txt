@@ -1,0 +1,2 @@
+netmiko>=4.3
+pysnmp>=7.0
