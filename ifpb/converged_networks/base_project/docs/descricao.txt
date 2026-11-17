@@ -1,0 +1,21 @@
+Entregar a descrição do planejamento descrevendo o problema geral, 
+a divisão e a especificação de cada integrante da equipe.
+
+Todos da equipe devem incluir no relatório:
+
+Problema geral (equipe)
+- Problemas do integrante 1 "Ryan" (Objetivo)
+- Problemas do integrante 2 "Gabriel" (Objetivo)
+
+Para cada integrante, definir o cenário de forma individual e específica no seu relatório
+o cenário
+- hardware (característica, link, preço etc)
+- software 
+- configuração
+- descrição da origem de dados
+- procedimento de extração de dados
+- variáveis configuradas
+- variáveis observadas
+- Configuração da rede (topologia, nós, Enlaces, Interfaces, Tecnologias, Endereçamento,
+Roteamento, Protocolos, Serviços, Segurança)
+- medição em relação ao objetivo
