@@ -1,0 +1,37 @@
+services:
+  ovpn-server:
+    build:
+      context: ./openvpn/server
+      dockerfile: Dockerfile
+    container_name: ovpn-server-cn
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    restart: unless-stopped
+    networks:
+      vpn-net:
+        ipv4_address: 10.10.0.2
+
+  ovpn-client:
+    build:
+      context: ./openvpn/client
+      dockerfile: Dockerfile
+    container_name: ovpn-client-cn
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    depends_on:
+      - ovpn-server
+    restart: unless-stopped
+    networks:
+      vpn-net:
+        ipv4_address: 10.10.0.3
+
+networks:
+  vpn-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.0.0/24
